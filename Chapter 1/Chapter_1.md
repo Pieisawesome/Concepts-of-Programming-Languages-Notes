@@ -28,12 +28,12 @@ Grammar
 - Business applications
     - Produce reports, decimal numbers and characters
     - COBOL (COmmon Business Oriented Language)
-- Artifical Intelligence
+- Artificial Intelligence
     - Symbols rather than numbers manipulated
     - LISP (LISt Processing)
     - PROLOG (LOGic PROgramming)
 - Web Software
-    - Eclectic collection of languages, ranging from markup languages to general-purpose programming languagaes
+    - Eclectic collection of languages, ranging from markup languages to general-purpose programming languages
     - Need for dynamic Web content ^
     - HTML
     - PHP
@@ -46,7 +46,7 @@ Grammar
 
 Readability problems occur whenever the program's author has learned a different subset from that subset with which the reader is familiar.
 
-#### 1.3.1.1 Simplicty
+#### 1.3.1.1 Simplicity
 
 Too many features make the language difficult to learn, but not enough may make it less readable. (Assembly, simple but harder to read)
 - Manageable set of features and constructs
@@ -60,7 +60,7 @@ Functional languages offer potentially the greatest overall simplicity, as the f
 
 #### 1.3.1.3 Data Types
 
-Defining data types and data structures in a language is another significant aid to readabilty.
+Defining data types and data structures in a language is another significant aid to readability.
 
     
         timeOut = 1
@@ -78,7 +78,7 @@ Syntax, or form, of the elements of a language has a significant effect on the r
     - End braces can get confusing if there are too many
     - Ex: while, class, for, end if, ...
 - Form and meaning
-    - Designing statements so that their appearance at leats partially indicates their purpose is an obvious aid to readability
+    - Designing statements so that their appearance at least partially indicates their purpose is an obvious aid to readability
 
 ### 1.3.2 Writability
 
@@ -132,7 +132,7 @@ Total cost of a programming language can be defined by many characteristics.
 Cost of:
 - Training programmers to use the language
 - Writing programs in the language
-- (Can be reduced in a good programming enviroment)
+- (Can be reduced in a good programming environment)
 - Compiling programs in the language
 - Executing programs written in a language is greatly influenced by the language's design
 - (Optimization can help to decrease the size or increase the execution speed)
@@ -152,13 +152,56 @@ But most criteria are not precisely defined nor precisely measurable. Still they
 ## 1.4 Influences on Language Design
 
 ### 1.4.1 Computer Architecture 
-von Neumann Architecture was a dominant computer architecture that languages were developed around. These languages are called imperative languages. Data and programs are stored in the same memory and instructions must be trasmitted between memory and the CPU.
+von Neumann Architecture was a dominant computer architecture that languages were developed around. These languages are called imperative languages. Data and programs are stored in the same memory and instructions must be transmitted between memory and the CPU.
 
 ![Image of von Neumann's architecture showing interactions between memory and CPU](vonNeumannArchitecture.png)
 
 
 The architecture works on the fetch-execute cycle. The address of the next instruction send to the CPU is maintained in a register called the program counter.
 
-# 1.4.2 Programming Design Methodologies
+This design has a bottle neck bus size as data is transferred between memory and CPU.
+
+### 1.4.2 Programming Design Methodologies
+
+There was a switch from hardware to software. As well as a shift from procedure-oriented to data oriented program design methodologies. Object-oriented methodology, first data abstraction (encapsulates), inheritance and dynamic method binding.
+
+## 1.5 Language Categories
+
+Languages are categorized into four bins:
+- Imperative
+- Functional
+- Logic
+- Object-Oriented* (Not really its own separate category)
+
+Imperative
+- Central features are variables, assignment statements, and iteration
+
+Functional
+- The main way to do computation is to apply a function to the given parameters
+- Lambda calculus
+
+Logic
+- Rule based but in no particular order
+
+Markup/programming hybrid (Protocols)
+- Used to support some other programming
+
+## 1.6 Language Design Trade-Offs
+
+Reliability vs Cost of Execution
+- Example: Java demands that all references to array elements be checked to ensure index or indices are in legal ranges but that adds great deal to the cost of execution
+
+Readability vs Writability
+- My Own Example: MIPS gets down to the 'nitty-gritty' and allows you to do what you want when programming, but at the cost of poor readability
+
+Writability (Flexibility) vs. Reliability
+- Example: C++ pointers are very flexible in addressing of data but can be potentially unreliable and cause unintentional behavior.
+
+
 
 --
+
+
+
+
+

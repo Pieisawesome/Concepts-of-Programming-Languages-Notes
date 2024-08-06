@@ -17,7 +17,7 @@ The semantics of this would be if the condition is true, the body of the while w
 ## 3.2 The General Problem of Describing Syntax
 
 Formal descriptions of the syntax of programming languages often do not include descriptions of the lowest-level syntactic units. These small units are called lexemes. They include its numeric literals, operators, and special words, among others.
-Lexemes can be partitioned into groups called idenitfiers; each group is represented by a name/token.
+Lexemes can be partitioned into groups called identifiers; each group is represented by a name/token.
 
 For example:
 
@@ -25,7 +25,7 @@ For example:
 
 The lexemes and tokens of this statement are:
 
-|Lexem | Token |
+|Lexeme | Token |
 |---|---|
 |index|identifier|
 |=|equal_sign|
@@ -40,7 +40,7 @@ The lexemes and tokens of this statement are:
 
 Languages can be formally defined in two distinct ways: recognition and by generation. 
 
-Recongnizers
+Recognizers
 - A recognition device reads input strings over the alphabet of the language and decides whether the input string belong to the language
 - This would be like the syntax analysis part of a compiler
 
@@ -56,11 +56,11 @@ Formal language-generation mechanisms, grammar, used to describe the syntax of p
 
 #### 3.3.1.1 Context-Free Grammars
 
-Noam Chomsky described four classes of generative devices or grammars that define four classes of languages. Two of them were caleld context-free and regular. His work was applied later to programs.
+Noam Chomsky described four classes of generative devices or grammars that define four classes of languages. Two of them were called context-free and regular. His work was applied later to programs.
 
-#### 3.3.1.2 Origns of Backus-Naur Form
+#### 3.3.1.2 Origins of Backus-Naur Form
 
-Backus-Naur Form (BNF) is a formal noation for specifying programming language syntax. Some what identical to Chomsky's generative devices for context-free languages (context-free grammars).
+Backus-Naur Form (BNF) is a formal notation for specifying programming language syntax. Some what identical to Chomsky's generative devices for context-free languages (context-free grammars).
 
 #### 3.3.1.3 Fundamentals
 
@@ -70,29 +70,29 @@ Metalanguage is a language to describe another language. BNF is a metalanguage f
 
 The text on the left side of the arrow, is called the left-hand side (LHS).
 
-The text to the right of the arrow is the definition of LHS. It is called the right-hand side (RHS) and consists of soem mixture of tokens, lexemes, and references to other abstractions.
+The text to the right of the arrow is the definition of LHS. It is called the right-hand side (RHS) and consists of some mixture of tokens, lexemes, and references to other abstractions.
 
 Altogether, the definition is called the rule/production.
 
-Abstractions, seen using '<>', are often called nonterminal symbols, where as lexemes and tokens of the rules are called terminal symbols. A BNF description or grammar, is a collection of rules.
+Abstractions, seen using '<>', are often called non-terminal symbols, where as lexemes and tokens of the rules are called terminal symbols. A BNF description or grammar, is a collection of rules.
 
 #### 3.3.1.4 Describing Lists
 
-Variable-lenght lists in math is often written using ellipsis. BNF does not use this, the alternative is recursion. A rule is recursive if LHS appears in its RHS.
+Variable-length lists in math is often written using ellipsis. BNF does not use this, the alternative is recursion. A rule is recursive if LHS appears in its RHS.
 
         <ident_list> -> identifier
-                      | identifer, <ident_list>
+                      | identifier, <ident_list>
 
 #### 3.3.1.5 Grammars and Derivations 
 
-A special nonterminal of the grammar is called the start symbol. This sequence of rule application is called a derivation.
+A special non-terminal of the grammar is called the start symbol. This sequence of rule application is called a derivation.
 
 ![Example of grammar using BNF](images/Example_3.1.png)
 
 ![Example of a derivation using the grammar](images/Example_3.1_derivation.png)
 
 The derivation in the example shows using the grammar to get to the sentence: 'begin A = B + C; B = C end'.
-Each of the strings in the derivation is called a sentential form. In this derivation, the replaced nonterminal is always the leftmost-nonterminal; this is called leftmost derivations.
+Each of the strings in the derivation is called a sentential form. In this derivation, the replaced non-terminal is always the leftmost-non-terminal; this is called leftmost derivations.
 
 #### 3.3.1.6 Parse Trees
 
@@ -115,7 +115,7 @@ There are characteristics of a grammar that are useful in determining whether a 
 
 #### 3.3.1.8 Operator Precedence
 
-When using two different operators, the semantic issue is the order of evalution of the two operators. This can be solved by assigning different precedence levels to operators. 
+When using two different operators, the semantic issue is the order of evaluation of the two operators. This can be solved by assigning different precedence levels to operators. 
 
 An example is assigning * with a higher precedence than +. 
 
@@ -129,7 +129,7 @@ When two operators have the same precedence, a semantic rules is required which 
         [(B + C) + A] or [B + (C + A)]
 
 
-Note that left recursive disallows the use of some important syntax analysis algorithms. So most languages right recusive is used by using LHS at the right end of the RHS.
+Note that left recursive disallows the use of some important syntax analysis algorithms. So most languages right recursive is used by using LHS at the right end of the RHS.
 
         <factor> -> <exp> ** <factor>
                   | <exp>
@@ -150,7 +150,7 @@ To Remove Ambiguity
 
 #### 3.3.1.10 An Unambiguous Grammar for if-else
 
-Dangling-else can lead to unambiguous grammar. To solve this, we the grammar can describe what happens. For example, 'else' can match to the closest unmatch 'if'.
+Dangling-else can lead to unambiguous grammar. To solve this, we the grammar can describe what happens. For example, 'else' can match to the closest unmatched 'if'.
 
         Grammar:
         <stmt> -> if (<logic_expr>) <stmt>
@@ -184,7 +184,7 @@ Braces, {}, in RHS are used to denote repetition.
         
         <ident_list> -> <identifier> {, <ident_list>}
 
-Parentheses, (), with elements seperated by the OR operator, |, are used to denote multiple-choice options.
+Parentheses, (), with elements separated by the OR operator, |, are used to denote multiple-choice options.
 
         <term> -> <term> + <factor>
                 | <term> * <factor>
@@ -194,13 +194,13 @@ Parentheses, (), with elements seperated by the OR operator, |, are used to deno
 
         <term> -> <term> (+|*|%) <term>
 
-EBNF version does not imply the direction of associativity. This problem is overcome by the synatx analyzer.
+EBNF version does not imply the direction of associativity. This problem is overcome by the syntax analyzer.
 
 --
 
 (Not Textbook)
 
-EBNF is ideally suited for being the basis for a recursive-descent parser because EBNF minimizes the number of nonterminals.
+EBNF is ideally suited for being the basis for a recursive-descent parser because EBNF minimizes the number of non-terminals.
 
 ### Lexical Analyzer
 - Pattern matcher for character strings
@@ -254,7 +254,7 @@ Recursive-Descent Parsing (RDP)
         }
 
 - Parser uses leftmost derivation
-- Although as mentioned, there is a problem with left recusion
+- Although as mentioned, there is a problem with left recursion
 - Therefore, grammar can be modified to remove left recursion
 
 ### Removing Left Recursion
@@ -282,10 +282,9 @@ Recursive-Descent Parsing (RDP)
         E -> T E'
         E'-> + T E'
         E'-> ε
-        
-
-
-
 
 ### 3.3.3 Grammar and Recongizers
 
+For context-free grammar, a recognizer for the language generated by the grammar can be algorithmically constructed. Many software systems have be developed to do so and one of the first was called yacc (yet another compiler compiler). 
+
+## 3.4 Attribute Grammar
